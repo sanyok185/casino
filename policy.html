@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Casino</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>*{padding:0;margin:0;border:0}*,*::after,*::before{box-sizing:border-box}*::after,*::before{display:inline-block}body,html{height:100%;min-width:320px}body{color:#c9aa76;line-height:1;font-family:"";font-size:.875rem;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}button,input,textarea{font-family:"";font-size:inherit;line-height:inherit;color:inherit;background-color:rgba(0,0,0,0)}input,textarea{width:100%}label{display:inline-block}button,option,select{cursor:pointer}a{display:inline-block;color:inherit;text-decoration:none}ul li{list-style:none}img{vertical-align:top}h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}body{line-height:1.15;background-color:#100a05}.lock body{overflow:hidden;touch-action:none;-ms-scroll-chaining:none;overscroll-behavior:none}.wrapper{min-height:100%;display:flex;flex-direction:column;overflow:hidden}@supports (overflow:clip){.wrapper{overflow:clip}}.wrapper>main{flex:1 1 auto}.wrapper>*{min-width:0}[class*=__container]{max-width:75rem;margin:0 auto;padding:0 .9375rem}[class*="--gc"]{display:grid;min-width:0;grid-template-columns:.9375rem 1fr minmax(auto,73.125rem) 1fr .9375rem}[class*="--gc"]>*{min-width:0;grid-column:3/4}.rating{display:inline-block}.rating__items{display:inline-flex;align-items:flex-start;gap:.25rem}.rating__item{flex:0 0 2.1875rem;width:2.1875rem;height:2.1875rem;position:relative;background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjgxNTcgNy4xMjMyNUwxMi44NjcyIDYuNTI0MDdMMTAuMTUxNiAwLjEyNjQ2NUw3LjQzNjAxIDYuNTMzNzRMMC40ODc1NDkgNy4xMjMyNUw1Ljc2NDEzIDExLjY5NDNMNC4xNzkyMiAxOC40ODgyTDEwLjE1MTYgMTQuODgzNUwxNi4xMjQgMTguNDg4MkwxNC41NDg4IDExLjY5NDNMMTkuODE1NyA3LjEyMzI1Wk0xMC4xNTE2IDEzLjA3NjNMNi41MTc5MiAxNS4yNzAxTDcuNDg0MzMgMTEuMTMzOEw0LjI3NTg2IDguMzUwNThMOC41MDg3MiA3Ljk4MzM1TDEwLjE1MTYgNC4wODg3M0wxMS44MDQyIDcuOTkzMDFMMTYuMDM3IDguMzYwMjVMMTIuODI4NiAxMS4xNDM1TDEzLjc5NSAxNS4yNzk3TDEwLjE1MTYgMTMuMDc2M1oiIGZpbGw9IiNFREQxNDYiLz4KPC9zdmc+Cg==) 0 0/2.1875rem no-repeat;transition:all .3s}.rating__item--active{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjA5MjMgMTQuODgzNUwxNi4wNjQ3IDE4LjQ4ODJMMTQuNDc5OCAxMS42OTQzTDE5Ljc1NjMgNy4xMjMyNUwxMi44MDc5IDYuNTMzNzRMMTAuMDkyMyAwLjEyNjQ2NUw3LjM3NjY4IDYuNTMzNzRMMC40MjgyMjMgNy4xMjMyNUw1LjcwNDggMTEuNjk0M0w0LjExOTg5IDE4LjQ4ODJMMTAuMDkyMyAxNC44ODM1WiIgZmlsbD0iI0VERDE0NiIvPgo8L3N2Zz4K) 0 0/2.1875rem no-repeat}.rating__item span{position:absolute;top:0;left:0;width:0%;height:2.1875rem;background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjA5MjMgMTQuODgzNUwxNi4wNjQ3IDE4LjQ4ODJMMTQuNDc5OCAxMS42OTQzTDE5Ljc1NjMgNy4xMjMyNUwxMi44MDc5IDYuNTMzNzRMMTAuMDkyMyAwLjEyNjQ2NUw3LjM3NjY4IDYuNTMzNzRMMC40MjgyMjMgNy4xMjMyNUw1LjcwNDggMTEuNjk0M0w0LjExOTg5IDE4LjQ4ODJMMTAuMDkyMyAxNC44ODM1WiIgZmlsbD0iI0VERDE0NiIvPgo8L3N2Zz4K) 0 0/2.1875rem no-repeat}.rating__item:not(:last-child)::after{content:"";position:absolute;right:0;top:0;height:100%;width:.25rem;-webkit-transform:translateX(100%);transform:translateX(100%)}[data-rating=set] .rating__item:not(:last-child)::after{cursor:pointer}.rating__input{width:100%;height:100%;opacity:0;display:block}[data-rating=set] .rating__input{cursor:pointer}.ibg{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}.ibg--top{-o-object-position:top;object-position:top}.ibg--bottom{-o-object-position:bottom;object-position:bottom}.ibg--left{-o-object-position:left;object-position:left}.ibg--right{-o-object-position:right;object-position:right}.ibg--contain{-o-object-fit:contain;object-fit:contain}.header{padding-top:1.5625rem;padding-bottom:1.5625rem}.header__container{display:flex;justify-content:center;align-items:center}.header__logo img{width:100%}.hero__container{display:flex;justify-content:center;align-items:center;padding-top:3.125rem}.hero__title{font-weight:700;text-align:center}.casino__items{display:flex;flex-direction:column}.item-casino{border-radius:1.25rem;background-color:#211409;display:grid;grid-template-columns:2fr 2fr 1.3fr;-webkit-column-gap:1.875rem;-moz-column-gap:1.875rem;column-gap:1.875rem}.item-casino__column{display:grid}.item-casino__column:not(:last-child){-webkit-column-gap:3.125rem;-moz-column-gap:3.125rem;column-gap:3.125rem;row-gap:1.875rem}.item-casino__column:nth-child(2){row-gap:0;padding:1.875rem}.item-casino__column:nth-child(3){order:2;justify-self:center;text-align:center}.item-casino__name{font-weight:700;transition:all .3s}.item-casino__bonuses{display:flex;font-weight:600;justify-content:center;align-items:center;text-align:center;display:grid;gap:1.25rem}.item-casino__bonuses b{color:#d5c15c}.item-casino__pay{display:flex;gap:1.25rem}.item-casino__rating{width:100%;height:100%;display:grid;gap:.625rem;justify-items:center;justify-content:center;align-items:center}.item-casino__button{padding:.75rem 1.5625rem;border:1px solid #c9aa76;border-radius:1.25rem;transition:all .3s}.about__container{display:grid;-webkit-column-gap:3.75rem;-moz-column-gap:3.75rem;column-gap:3.75rem;row-gap:1.875rem}.about__title:not(:last-child){margin-bottom:1.5625rem}.about__text{display:grid;gap:.9375rem;font-weight:400}.about__text a{font-weight:700}.orgs__title{text-align:center}.orgs__title:not(:last-child){margin-bottom:2.5rem}.orgs__list{display:grid;gap:.9375rem}.orgs__list img{max-width:1.875rem}.orgs__list a{display:flex;align-items:center;gap:1.25rem;word-wrap:break-word;overflow-wrap:break-word}.footer{background-color:#2f1c0c}.footer__container{display:grid;justify-items:center}.footer__text{font-weight:400;text-align:center}.footer__text a{font-weight:700}.footer__bottom{font-weight:400;display:flex;justify-content:space-between;width:100%;padding-top:1.875rem}.footer__actions{display:flex;gap:1.5625rem}.footer__action{font-weight:700}.policy{padding-bottom:3.75rem}.policy__title{text-align:center}.policy__title:not(:last-child){margin-bottom:2.5rem}.policy__text{display:grid;gap:.9375rem}@media (min-width:61.99875em){.hero__title{max-width:70%}.about__container{grid-template-columns:55% 35%}}@media (min-width:75em){.header__logo{max-width:18.75rem}.hero__container{padding-top:3.125rem}.hero__container{padding-bottom:5rem}.hero__title{font-size:4.25rem}.casino{padding-top:3.75rem}.casino{padding-bottom:3.75rem}.item-casino:not(:last-child){margin-bottom:3.125rem}.item-casino{padding:3.75rem}.item-casino{row-gap:2.1875rem}.item-casino__name{font-size:3.125rem}.item-casino__bonuses{font-size:2.8125rem}.item-casino__bonuses span{font-size:2.1875rem}.item-casino__pay img{max-width:3.125rem}.item-casino__rating{font-size:2.1875rem}.item-casino__button{font-size:1.625rem}.about{padding-top:3.75rem}.about{padding-bottom:3.75rem}.about__title{font-size:2.8125rem}.about__text{font-size:1.5rem}.orgs{padding-top:4.375rem}.orgs{padding-bottom:4.375rem}.orgs__title{font-size:2.8125rem}.orgs__list{font-size:1.75rem}.footer{padding-top:2.5rem}.footer__text{font-size:1.25rem}.footer__bottom{padding-bottom:2.1875rem}.footer__bottom{font-size:1.25rem}.policy__title{font-size:3.75rem}.policy__text{font-size:1.25rem}}@media (max-width:20em){.header__logo{max-width:11.25rem}.hero__container{padding-top:1.875rem}.hero__container{padding-bottom:3.125rem}.hero__title{font-size:2.8125rem}.casino{padding-top:2.5rem}.casino{padding-bottom:2.5rem}.item-casino:not(:last-child){margin-bottom:1.875rem}.item-casino{padding:1.5625rem}.item-casino{row-gap:.9375rem}.item-casino__name{font-size:2.5rem}.item-casino__bonuses{font-size:1.75rem}.item-casino__bonuses span{font-size:1.5625rem}.item-casino__pay img{max-width:2.5rem}.item-casino__rating{font-size:1.625rem}.item-casino__button{font-size:1.25rem}.about{padding-top:2.5rem}.about{padding-bottom:2.5rem}.about__title{font-size:2.125rem}.about__text{font-size:1.125rem}.orgs{padding-top:3.125rem}.orgs{padding-bottom:3.125rem}.orgs__title{font-size:2.125rem}.orgs__list{font-size:1.125rem}.footer{padding-top:1.5625rem}.footer__text{font-size:1rem}.footer__bottom{padding-bottom:1.25rem}.footer__bottom{font-size:1rem}.policy__title{font-size:2.8125rem}.policy__text{font-size:1rem}}@media (max-width:61.99875em){.about__title{text-align:center}}@media (max-width:47.99875em){.item-casino{grid-template-columns:1fr 1fr}}@media (max-width:29.99875em){.item-casino{grid-template-columns:1fr}.item-casino__column{justify-items:center;text-align:center}}@media (min-width:20em)and (max-width:75em){.header__logo{max-width:clamp(11.25rem ,8.5227272727rem + 13.6363636364vw ,18.75rem)}.hero__container{padding-top:clamp(1.875rem ,1.4204545455rem + 2.2727272727vw ,3.125rem)}.hero__container{padding-bottom:clamp(3.125rem ,2.4431818182rem + 3.4090909091vw ,5rem)}.hero__title{font-size:clamp(2.8125rem ,2.2897727273rem + 2.6136363636vw ,4.25rem)}.casino{padding-top:clamp(2.5rem ,2.0454545455rem + 2.2727272727vw ,3.75rem)}.casino{padding-bottom:clamp(2.5rem ,2.0454545455rem + 2.2727272727vw ,3.75rem)}.item-casino:not(:last-child){margin-bottom:clamp(1.875rem ,1.4204545455rem + 2.2727272727vw ,3.125rem)}.item-casino{padding:clamp(1.5625rem ,.7670454545rem + 3.9772727273vw ,3.75rem)}.item-casino{row-gap:clamp(.9375rem ,.4829545455rem + 2.2727272727vw ,2.1875rem)}.item-casino__name{font-size:clamp(2.5rem ,2.2727272727rem + 1.1363636364vw ,3.125rem)}.item-casino__bonuses{font-size:clamp(1.75rem ,1.3636363636rem + 1.9318181818vw ,2.8125rem)}.item-casino__bonuses span{font-size:clamp(1.5625rem ,1.3352272727rem + 1.1363636364vw ,2.1875rem)}.item-casino__pay img{max-width:clamp(2.5rem ,2.2727272727rem + 1.1363636364vw ,3.125rem)}.item-casino__rating{font-size:clamp(1.625rem ,1.4204545455rem + 1.0227272727vw ,2.1875rem)}.item-casino__button{font-size:clamp(1.25rem ,1.1136363636rem + .6818181818vw ,1.625rem)}.about{padding-top:clamp(2.5rem ,2.0454545455rem + 2.2727272727vw ,3.75rem)}.about{padding-bottom:clamp(2.5rem ,2.0454545455rem + 2.2727272727vw ,3.75rem)}.about__title{font-size:clamp(2.125rem ,1.875rem + 1.25vw ,2.8125rem)}.about__text{font-size:clamp(1.125rem ,.9886363636rem + .6818181818vw ,1.5rem)}.orgs{padding-top:clamp(3.125rem ,2.6704545455rem + 2.2727272727vw ,4.375rem)}.orgs{padding-bottom:clamp(3.125rem ,2.6704545455rem + 2.2727272727vw ,4.375rem)}.orgs__title{font-size:clamp(2.125rem ,1.875rem + 1.25vw ,2.8125rem)}.orgs__list{font-size:clamp(1.125rem ,.8977272727rem + 1.1363636364vw ,1.75rem)}.footer{padding-top:clamp(1.5625rem ,1.2215909091rem + 1.7045454545vw ,2.5rem)}.footer__text{font-size:clamp(1rem ,.9090909091rem + .4545454545vw ,1.25rem)}.footer__bottom{padding-bottom:clamp(1.25rem ,.9090909091rem + 1.7045454545vw ,2.1875rem)}.footer__bottom{font-size:clamp(1rem ,.9090909091rem + .4545454545vw ,1.25rem)}.policy__title{font-size:clamp(2.8125rem ,2.4715909091rem + 1.7045454545vw ,3.75rem)}.policy__text{font-size:clamp(1rem ,.9090909091rem + .4545454545vw ,1.25rem)}}@media (max-width:47.99875em)and (min-width:29.99875em){.item-casino__column:nth-child(2){grid-column:span 2;order:3}}@media (any-hover:hover){[data-rating=set] .rating__items:hover .rating__item{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjA5MjMgMTQuODgzNUwxNi4wNjQ3IDE4LjQ4ODJMMTQuNDc5OCAxMS42OTQzTDE5Ljc1NjMgNy4xMjMyNUwxMi44MDc5IDYuNTMzNzRMMTAuMDkyMyAwLjEyNjQ2NUw3LjM3NjY4IDYuNTMzNzRMMC40MjgyMjMgNy4xMjMyNUw1LjcwNDggMTEuNjk0M0w0LjExOTg5IDE4LjQ4ODJMMTAuMDkyMyAxNC44ODM1WiIgZmlsbD0iI0VERDE0NiIvPgo8L3N2Zz4K) 0 0/2.1875rem no-repeat}[data-rating=set] .rating__item:hover~.rating__item{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyMCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjgxNTcgNy4xMjMyNUwxMi44NjcyIDYuNTI0MDdMMTAuMTUxNiAwLjEyNjQ2NUw3LjQzNjAxIDYuNTMzNzRMMC40ODc1NDkgNy4xMjMyNUw1Ljc2NDEzIDExLjY5NDNMNC4xNzkyMiAxOC40ODgyTDEwLjE1MTYgMTQuODgzNUwxNi4xMjQgMTguNDg4MkwxNC41NDg4IDExLjY5NDNMMTkuODE1NyA3LjEyMzI1Wk0xMC4xNTE2IDEzLjA3NjNMNi41MTc5MiAxNS4yNzAxTDcuNDg0MzMgMTEuMTMzOEw0LjI3NTg2IDguMzUwNThMOC41MDg3MiA3Ljk4MzM1TDEwLjE1MTYgNC4wODg3M0wxMS44MDQyIDcuOTkzMDFMMTYuMDM3IDguMzYwMjVMMTIuODI4NiAxMS4xNDM1TDEzLjc5NSAxNS4yNzk3TDEwLjE1MTYgMTMuMDc2M1oiIGZpbGw9IiNFREQxNDYiLz4KPC9zdmc+Cg==) 0 0/2.1875rem no-repeat}[data-rating=set] .rating__item:hover~.rating__item span{display:none}.item-casino__name:hover{color:#fff}.item-casino__button:hover{color:#fff;border:1px solid #fff}.about__text a:hover{text-decoration:underline}.orgs__list a:hover{text-decoration:underline}.footer__text a:hover{text-decoration:underline}.footer__action:hover{text-decoration:underline}}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="header__container">
+				<a href="index.html" class="header__logo"><img src="img/image.svg" alt="Logo" /></a>
+			</div>
+		</div>
+
+		<main class="page">
+			<div class="page__policy policy">
+				<div class="policy__container">
+					<h1 class="policy__title">
+						Política de privacidade
+					</h1>
+					<div class="policy__text">
+						<p>
+							A presente Política de Privacidade descreve as ações do serviço *NOME DE DOMÍNIO* (doravante designado por “Organizador”) com os seus dados pessoais fornecidos através do website no endereço: “favbet.ua”, (doravante também designado por “Site”).
+						<p>
+							Levamos a sério a segurança dos dados pessoais de todos os utilizadores do Site, pelo que o Organizador tomará todas as medidas necessárias para impedir a utilização indevida dos seus dados pessoais que cheguem ao nosso conhecimento. Trataremos os seus dados pessoais em estrita conformidade com os requisitos da legislação em vigor da Portugal, bem como tendo em conta as disposições do Regulamento Geral sobre a Proteção de Dados (UE) (doravante designado por “RGPD”) e apenas se existirem motivos legais para tal tratamento.
+						</p>
+						<p>
+							A presente Política de Privacidade, Processamento e Proteção de Dados Pessoais (doravante também designada por “Política”) do organizador de jogos de casino online e do organizador de atividades de apostas *NOME DE DOMÍNIO*, foi desenvolvida com base na Lei da Portugal “Sobre a Proteção de Dados Pessoais” e tendo em conta as disposições do RGPD, e aplica-se a todas as informações que o Organizador possa obter sobre o Jogador (e/ou Utilizador) durante a utilização do Site por este último e no processo de prestação de serviços pelo Organizador.
+						</p>
+						<p>
+							A presente Política explica detalhadamente o procedimento de recolha e tratamento de dados pessoais e é um documento público desenvolvido pelo Organizador e publicado em acesso público no Site. Ao efetuar quaisquer alterações à Política de Privacidade, o Jogador será considerado devidamente notificado de tais alterações pelo Organizador, publicando a nova versão do documento no site *NOME DE DOMÍNIO*.
+						</p>
+						<p>
+							Caso o Organizador faça alterações à Política de Privacidade com as quais o Jogador não concorde, este será obrigado a deixar de utilizar o Site. O facto de continuar a utilizar as funcionalidades do Organizador é a confirmação do consentimento e aceitação do Jogador da versão atual da Política de Privacidade.
+						</p>
+						<p>
+							Ao utilizar o formulário de registo no Site e ao inserir dados pessoais no mesmo, o Jogador confirma o seu consentimento para o tratamento dos seus dados pessoais, de acordo com os termos propostos desta Política de Privacidade, bem como de acordo com o Art. 6, 8, 10, 11 da Lei da Portugal "Sobre a Proteção de Dados Pessoais".
+						</p>
+						<p>
+							Não é obrigado a fornecer-nos dados pessoais, mas sem as informações necessárias não poderemos registar-nos no Site e prestar-lhe serviços.
+						</p>
+						<p>
+							No caso de controlarmos os métodos de recolha dos seus dados pessoais e de determinarmos as finalidades para as quais esses dados pessoais são utilizados, o Organizador atua como um “controlador de dados” dentro do significado da legislação europeia aplicável sobre a proteção de dados pessoais, bem como um “controlador de dados pessoais” dentro do significado da Lei da Portugal “Sobre a Proteção de Dados Pessoais”.
+						</p>
+						<p>
+							Tratamos os seus dados pessoais se:
+						</p>
+						<ul>
+							<li>Consentiu no tratamento de dados pessoais;</li>
+							<li>O processamento é necessário para o registar como Jogador do Site;</li>
+							<li>O tratamento é necessário para fins de identificação (verificação, estabelecimento de dados).</li>
+						</ul>
+						<p>
+							Apenas processamos as informações sobre si de que necessitamos para lhe prestar serviços, ou informações que fornece com o seu consentimento para além dos limites do tratamento necessário.
+						</p>
+
+						<p>Levamos a sério a segurança dos dados pessoais de todos os utilizadores do Site, pelo que o Organizador tomará todas as medidas necessárias para impedir a utilização indevida dos seus dados pessoais que cheguem ao nosso conhecimento. Trataremos os seus dados pessoais em estrita conformidade com os requisitos da legislação em vigor da Portugal, bem como tendo em conta as disposições do Regulamento Geral sobre a Proteção de Dados (UE) (doravante designado por “RGPD”) e apenas se existirem motivos legais para tal tratamento.</p>
+
+						<p>A presente Política de Privacidade, Processamento e Proteção de Dados Pessoais (doravante também designada por “Política”) do organizador de jogos de casino online e do organizador de atividades de apostas *NOME DE DOMÍNIO*, foi desenvolvida com base na Lei da Portugal “Sobre a Proteção de Dados Pessoais” e tendo em conta as disposições do RGPD, e aplica-se a todas as informações que o Organizador possa obter sobre o Jogador (e/ou Utilizador) durante a utilização do Site por este último e no processo de prestação de serviços pelo Organizador.</p>
+
+						<p>A presente Política explica detalhadamente o procedimento de recolha e tratamento de dados pessoais e é um documento público desenvolvido pelo Organizador e publicado em acesso público no Site. Ao efetuar quaisquer alterações à Política de Privacidade, o Jogador será considerado devidamente notificado de tais alterações pelo Organizador, publicando a nova versão do documento no site *NOME DE DOMÍNIO*,</p>
+
+						<p>Caso o Organizador faça alterações à Política de Privacidade com as quais o Jogador não concorde, este será obrigado a deixar de utilizar o Site. O facto de continuar a utilizar as funcionalidades do Organizador é a confirmação do consentimento e aceitação do Jogador da versão atual da Política de Privacidade.</p>
+
+						<p>Ao utilizar o formulário de registo no Site e ao inserir dados pessoais no mesmo, o Jogador confirma o seu consentimento para o tratamento dos seus dados pessoais, de acordo com os termos propostos desta Política de Privacidade, bem como de acordo com o Art. 6, 8, 10, 11 da Lei da Portugal "Sobre a Proteção de Dados Pessoais".</p>
+
+						<p>Não é obrigado a fornecer-nos dados pessoais, mas sem as informações necessárias não poderemos registar-nos no Site e prestar-lhe serviços.</p>
+
+						<p>No caso de controlarmos os métodos de recolha dos seus dados pessoais e de determinarmos as finalidades para as quais esses dados pessoais são utilizados, o Organizador atua como um “controlador de dados” dentro do significado da legislação europeia aplicável sobre a proteção de dados pessoais, bem como um “controlador de dados pessoais” dentro do significado da Lei da Portugal “Sobre a Proteção de Dados Pessoais”.</p>
+
+						<b>Tratamos os seus dados pessoais se:</b>
+
+						<p>
+							Consentiu no tratamento de dados pessoais;
+							O processamento é necessário para o registar como Jogador do Site;
+							O tratamento é necessário para fins de identificação (verificação, estabelecimento de dados).
+							Apenas processamos as informações sobre si de que necessitamos para lhe prestar serviços, ou informações que fornece com o seu consentimento para além dos limites do tratamento necessário.
+						</p>
+
+						<b>1. TERMOS UTILIZADOS</b>
+						<p>1.1. Site – uma única página web ou um conjunto de páginas web através das quais o Organizador de Jogos de Azar conduz as suas atividades na Internet.</p>
+
+						<p>
+							1.2. O proprietário e o responsável pelo tratamento dos dados pessoais é *NOME DE DOMÍNIO*, que determina a finalidade do tratamento dos dados pessoais, estabelece a composição desses dados e o procedimento para o seu tratamento.
+
+						</p>
+						<p>1.3. Jogador (utilizador) - um indivíduo que, no momento da participação num jogo de azar, atingiu a idade de 21 anos, é legalmente capaz, não está no Registo de pessoas com acesso restrito a estabelecimentos de jogos de azar e/ou participação em jogos de azar e participa num jogo de azar por sua própria vontade.</p>
+
+						<p>1.4. O consentimento do titular dos dados pessoais é uma expressão voluntária da vontade de um indivíduo (desde que informado) de conceder permissão para o tratamento dos seus dados pessoais de acordo com a finalidade formulada do seu tratamento, expressa de uma forma que permita tirar uma conclusão sobre a concessão do consentimento.</p>
+						<p>
+
+							1.5. Despersonalização de dados pessoais - remoção de informação que permite que uma pessoa seja direta ou indiretamente identificada.
+
+						</p>
+						<p>1.6. Tratamento de dados pessoais - qualquer ação ou conjunto de ações, tais como recolha, registo, acumulação, armazenamento, adaptação, modificação, renovação, utilização e divulgação (divulgação, venda, transferência), despersonalização, destruição de dados pessoais, incluindo a utilização de sistemas de informação (automatizados).</p>
+
+						<p>
+							1.7. Organizador - *NOME DE DOMÍNIO*, uma entidade legal, uma entidade empresarial, que, com base nas licenças obtidas, tem o direito de realizar atividades relacionadas com a organização e condução de jogos de casino na Internet, atividades relacionadas com a organização e condução de atividades de apostas de acordo com
+
+						</p>
+						<p>
+							sobre a Lei da Portugal "Sobre a Regulamentação Estatal das Atividades Relativas à Organização e Conduta dos Jogos de Azar".
+
+						</p>
+						<p>1.8. Os dados pessoais são informações ou um conjunto de informações sobre uma pessoa singular (jogador) que é identificada ou pode ser especificamente identificada.</p>
+
+						<p>1.9. Território - as informações no sistema online do organizador são processadas exclusivamente no território da Portugal.</p>
+
+						<p>Outros termos da Política são utilizados no significado previsto pela legislação atual da Portugal.</p>
+
+						<b>2. PRINCÍPIOS BÁSICOS DA POLÍTICA DE PRIVACIDADE</b>
+						<p>2.1. A presente Política de Privacidade define os requisitos gerais para o tratamento e proteção dos dados pessoais dos Jogadores recolhidos pelo Organizador.</p>
+
+						<p>2.2. O proprietário e administrador dos dados pessoais recebidos é o Organizador.</p>
+
+						<p> 2.3. A leitura e aceitação dos termos da Política é condição obrigatória para o registo no Site do Organizador e utilização dos seus recursos.</p>
+						<p>
+
+							2.4. O consentimento do Jogador para o tratamento dos seus dados pessoais é fornecido em formato eletrónico, colocando uma marca de verificação (tique) ao lado do item correspondente durante o registo no Site do Organizador.
+						</p>
+
+						<p>2.5. Uma pessoa que não aceite os termos da Política e/ou não concorde com os mesmos deverá abster-se de utilizar o Site e os serviços da favbet.ua.</p>
+
+						<p>2.6. Os dados pessoais dos Jogadores são armazenados pelo Organizador durante o período necessário para atingir as finalidades de tratamento de tais dados especificadas na presente Política. Os dados pessoais poderão ser destruídos nos casos previstos pela legislação em vigor da Portugal e/ou outra legislação europeia aplicável.</p>
+
+						<p>2.7. O Organizador toma todas as medidas necessárias para proteger os dados recebidos contra acesso não autorizado ou perda acidental, alteração, divulgação ou destruição.</p>
+
+						<b>3. RECOLHA E UTILIZAÇÃO DE DADOS PESSOAIS</b>
+						<p>3.1. Os dados sobre o Jogador recolhidos pelo Organizador incluem:</p>
+
+						<p>3.1.1. Informações recebidas do Jogador no momento do registo e/ou pagamento, incluindo:</p>
+
+						<p>
+							- apelido, nome próprio, patronímico (se disponível);
+							- género;
+							- data de nascimento;
+							- local de residência;
+							- número e série do passaporte, autoridade que emitiu o passaporte, data de emissão do passaporte;
+							- número de registo do cartão de contribuinte;
+							- número de telefone;
+							- e-mail;
+							- foto;
+							- dados do cartão de pagamento, dados do método de pagamento;
+							- informação sobre a pertença a pessoas politicamente expostas;
+							- bolachas;
+							- Endereços IP, informação sobre o dispositivo do Jogador, identificadores únicos do dispositivo, impressão digital do browser, geolocalização;
+							- parâmetros e definições dos navegadores de Internet (User-agent);
+							- login e password de acesso.
+						</p>
+						<p>3.2. O Organizador recolhe os dados pessoais do Jogador para o identificar, criar e gerir uma conta de cliente, permitir ao Jogador fazer uma aposta para participar num jogo de azar em seu próprio nome e receber ganhos de acordo com as regras e condições do jogo de azar.</p>
+
+						<p>3.3. O Organizador apenas recolhe os dados pessoais do Jogador que são fornecidos de forma consciente e voluntária para efeitos de utilização dos serviços do Site e são necessários no âmbito da finalidade do seu tratamento, tal como formulado nesta Política.</p>
+
+						<p>3.4. Todas as informações processadas pelo Organizador estão protegidas por medidas organizacionais e técnicas especiais para evitar a perda ou destruição acidental, processamento ilegal, incluindo a destruição ou acesso ilegal aos dados pessoais dos Jogadores.</p>
+
+						<p> 3.5. Os colaboradores do Organizador apenas têm acesso aos dados pessoais que lhes sejam necessários no âmbito do desempenho das suas funções oficiais. Estas pessoas estão proibidas de divulgar estes dados mesmo após o termo do vínculo laboral com o Organizador.</p>
+
+						<p>
+							3.6. A eliminação e destruição de dados pessoais são efetuadas de forma a excluir a possibilidade futura de reposição desses dados pessoais. Os dados pessoais estão sujeitos a eliminação ou destruição nos seguintes casos:
+
+							- expiração do período de armazenamento de dados;
+							- cessação da relação jurídica entre o titular dos dados pessoais e o proprietário ou gestor (caso tal eliminação e/ou destruição não contrarie a legislação em vigor da Portugal);
+							- emissão de um regulamento relevante pelo Comissário para os Direitos Humanos da Verkhovna Rada da Portugal ou funcionários do secretariado por ele designados;
+							- entrada em vigor de uma decisão judicial para apagar ou destruir dados pessoais.
+						</p>
+						<p>4.º DIREITOS DOS JOGADORES</p>
+						<p>4.1. Os direitos pessoais não patrimoniais do Jogador sobre os seus dados pessoais são inalienáveis ​​e invioláveis.</p>
+						<p>
+
+							4.1.1. Se o Jogador estiver localizado no território da Portugal, de acordo com a Lei da Portugal "Sobre a Proteção de Dados Pessoais", tem o direito de:
+
+						</p>
+						<p>
+							- conhecer as fontes de recolha, a localização dos seus dados pessoais, a finalidade do seu tratamento, a localização ou local de residência (estadia) do titular ou do responsável pelos dados pessoais ou a data da sua
+							um mandato claro para obter essas informações de pessoas por si autorizadas, exceto nos casos estabelecidos por lei;
+							- receber informações sobre as condições de disponibilização de acesso aos dados pessoais, nomeadamente informações sobre terceiros aos quais os seus dados pessoais são transferidos;
+							- para aceder aos seus dados pessoais;
+							- receber, no prazo máximo de trinta dias seguidos, a contar da data de receção do pedido, salvo nos casos previstos na lei, resposta sobre se os seus dados pessoais são objeto de tratamento, bem como receber o conteúdo desses dados pessoais;
+							- apresentar um pedido fundamentado ao Titular dos dados pessoais opondo-se ao tratamento dos seus dados pessoais;
+							- apresentar um pedido fundamentado para alterar ou destruir os seus dados pessoais a qualquer Proprietário e Subcontratante de dados pessoais se esses dados forem tratados ilegalmente ou forem imprecisos;
+							- proteger os seus dados pessoais contra o processamento ilegal e perda acidental, destruição, danos devido a ocultação intencional, falha no fornecimento ou fornecimento intempestivo, bem como proteger contra o fornecimento de informações que não sejam fiáveis ​​ou difamatórias da honra, dignidade e reputação comercial de um indivíduo;
+							- apresentar reclamações sobre o tratamento dos seus dados pessoais ao Comissário para os Direitos Humanos da Verkhovna Rada da Portugal ou ao tribunal;
+							- aplicar recursos legais em caso de violação da legislação de proteção de dados pessoais;
+							- fazer reservas quanto à restrição do direito de tratar os seus dados pessoais quando presta o seu consentimento;
+							- retirar o consentimento para o tratamento de dados pessoais;
+							- conhecer o mecanismo de tratamento automatizado de dados pessoais;
+							- para se proteger contra a tomada de decisões automatizadas que tenham consequências legais para ele/ela.
+						</p>
+						<p>4.1.2. No caso de o Jogador se encontrar na União Europeia, de acordo com os requisitos do RGPD, o Jogador tem o direito de:</p>
+
+						<p>
+							- retirar o seu consentimento para o tratamento de dados pessoais, caso tenha sido previamente prestado;
+							- solicitar o acesso aos seus dados pessoais e a sua correção ou eliminação (direito a ser esquecido);
+							- restringir o tratamento dos seus dados pessoais ou opor-se ao seu tratamento;
+							- receber informação sobre o período de armazenamento dos seus dados pessoais ou os critérios pelos quais esse período pode ser determinado;
+							- se os dados pessoais forem transferidos para um país terceiro ou para uma organização internacional, têm o direito de ser informados sobre as salvaguardas adequadas relativas à transferência desses dados;
+							- receber informações sobre a fonte de onde têm origem os seus dados pessoais e, quando aplicável, se foram obtidos a partir de fontes publicamente disponíveis (se os dados pessoais não foram obtidos junto de si);
+							- receber os dados pessoais que foram fornecidos ao responsável pelo tratamento num formato estruturado, de uso corrente e legível por máquina e ter o direito de transmitir esses dados a outro responsável pelo tratamento sem impedimento do responsável pelo tratamento a quem os dados pessoais foram fornecidos (direito à portabilidade);
+							- apresentar reclamação à autoridade de controlo competente a quem se refere o tratamento de dados pessoais;
+							- não estar sujeito a uma decisão baseada exclusivamente no tratamento automatizado, incluindo a criação de perfis, exceto quando tal seja necessário para a conclusão ou execução dos termos de serviço aos quais se inscreveu.
+							4.2. O Jogador tem o direito de revogar o consentimento para o processamento futuro de dados pessoais sem especificar o motivo, enviando um pedido por escrito ao Organizador com o requisito relevante, se tal não contradizer a legislação atual da Portugal. Tal pedido deverá conter uma lista específica de dados pessoais para os quais está a ser retirado o consentimento para o tratamento pelo Organizador.
+						</p>
+
+						<p> 4.3. O jogador tem ainda o direito de solicitar ao responsável pelo tratamento de dados pessoais que proíba o tratamento dos seus dados pessoais (parte deles) e/ou altere a sua composição/conteúdo. Tal pedido será considerado pelo proprietário no prazo de 10 dias corridos a contar da data da sua receção. Se, como resultado da revisão, se verificar que os dados pessoais do Jogador (parte deles) estão a ser tratados ilegalmente, o Organizador compromete-se a interromper o tratamento dos dados pessoais do Jogador (parte deles), a tomar as medidas adequadas para eliminar/destruir tais dados pessoais e a informar devidamente o Jogador sobre os resultados da revisão do pedido enviado.</p>
+
+						<p>
+							4.4. A solicitação do jogador pode ser enviada:
+							- ou em formato eletrónico, enviando uma carta para o endereço de correio eletrónico: *NOME DE DOMÍNIO*.
+							4.5. Note que o Organizador não pode destruir (apagar) os dados pessoais do Jogador, incluindo a seu pedido, se o armazenamento desses dados pessoais for necessário de acordo com a legislação em vigor da Portugal.
+						</p>
+
+						<p>
+							5.º FORNECIMENTO DE ACESSO À INFORMAÇÃO
+							5.1. O Organizador não transfere os dados pessoais dos Jogadores para terceiros, salvo nos casos previstos pela legislação em vigor da Portugal e pelos termos da presente Política.
+						</p>
+
+						<p>
+							5.2. O Organizador tem o direito de transferir os dados pessoais dos Jogadores para terceiros (prestadores de serviços e/ou parceiros).
+							às partes que realizam transações comerciais para a favbet.ua, em nosso nome e de acordo com as nossas instruções (doravante designadas por Parceiros) e/ou confiam o seu processamento, com a finalidade de:
+						</p>
+
+						<p>
+							- criação, operação e gestão da conta de cliente do Jogador;
+							- utilização pelo Jogador dos serviços do Organizador e/ou Parceiros;
+							- verificar a exatidão dos dados pessoais fornecidos pelo Jogador, transferindo-os para as autoridades policiais, autoridades estatais ou outros terceiros, exclusivamente com a finalidade de garantir a proteção dos direitos e interesses legítimos do Organizador e/ou Parceiros;
+							- responder a um pedido de uma autoridade estatal competente se o Organizador considerar que tal divulgação está de acordo com o objetivo do pedido e a lei aplicável;
+							- enviar periodicamente aos Jogadores mensagens informativas, em particular, mas não exclusivamente: sobre alterações importantes nos serviços ou novas funcionalidades, atualizações técnicas ou alterações na lista de regras, bem como com a finalidade de notificar sobre eventos de marketing, incluindo promoções e outras notícias, suporte e serviço para Jogadores;
+							- investigar atividades suspeitas, ilegais, fraudulentas ou outras atividades impróprias relacionadas com os serviços do Organizador;
+							- denunciar um crime, incluindo atividades relacionadas com o branqueamento de capitais ou fraude.
+							5.3. Ao transferir informações para os Parceiros, fornecemos-lhes acesso apenas às informações necessárias para que possamos prestar serviços. Estas pessoas são obrigadas a garantir a proteção dos dados recebidos e a utilizá-los apenas para fins previamente acordados e em conformidade com todas as regras de proteção de dados pessoais aplicáveis.
+						</p>
+
+						<p>5.4. A divulgação de dados pessoais sem o consentimento do Jogador é permitida nos casos especificados pela legislação vigente da Portugal e apenas no interesse da segurança nacional e económica, bem como dos direitos e interesses legítimos de uma pessoa.</p>
+
+						<p>5.5. Os serviços do Organizador podem conter links para outros sites que não estão relacionados com o favbet.ua. Se o Jogador seguir o link, será levado para um site de terceiros e, nesse caso, o Organizador recomenda vivamente que os Jogadores revejam a política de privacidade de cada site de terceiros que visitem. O Organizador não controla e não assume qualquer responsabilidade pelo conteúdo e/ou políticas de privacidade e/ou ações de sites e/ou serviços de terceiros.</p>
+
+						<strong>AVISO SOBRE O USO DE COOKIES</strong>
+						<p>Os cookies são pequenos pedaços de dados enviados do nosso website (ou de outro domínio) e armazenados pelo seu browser no seu computador, telemóvel ou outro dispositivo portátil. Os cookies podem ser colocados, lidos e/ou gravados pelos nossos serviços ou por outros sites ou serviços que reconhecem um cookie específico, o que permite ao site "recordar" ou "reconhecer" um navegador ou dispositivo específico e, em alguns casos, armazenar informações sobre esse navegador ou dispositivo. Desta forma, o site irá recordar as suas preferências e ações que realizou durante um determinado período de tempo, inclusive para que não tenha de voltar a introduzir os seus dados.</p>
+
+						<p>
+							Os cookies ajudam-no a utilizar os nossos serviços mais facilmente e também nos ajudam a compreendê-lo melhor, inclusive para saber mais sobre as suas preferências e oferecer alguns serviços personalizados.
+
+							Tal como muitos outros sites, utilizamos os seguintes tipos de cookies:
+						</p>
+
+						<p>
+							Definições: Utilizamos cookies para lembrar as suas definições e preferências. Por exemplo, pode ser o idioma que prefere.
+							Autenticação: Utilizamos cookies para nos lembrar quem é e para consultar as informações da sua conta na nossa base de dados quando acede aos nossos serviços, para que não tenha de fazer login sempre que nos visita. Ajuda-nos a prestar serviços adaptados às suas necessidades e interesses específicos.
+							Análise e desempenho: utilizamos cookies para otimizar a nossa experiência através da recolha de dados sobre a forma como os utilizadores interagem com os nossos serviços. Utilizamos estes dados para melhorar os recursos do nosso website e compreender como interage com ele.
+							Publicidade: Podemos utilizar cookies para otimizar a nossa publicidade. Utilizamos estes cookies para mostrar anúncios relevantes dentro e fora do nosso website.
+							Para mais informações sobre o que são cookies, como funcionam, como geri-los ou como eliminá-los, sugerimos que aceda a www.allaboutcookies.org.
+						</p>
+
+						<p>
+							Pode gerir os cookies armazenados no seu dispositivo ou desativá-los completamente nas definições do seu navegador. Note que tais ações podem afetar a sua experiência online ou até mesmo impedi-lo de utilizar os nossos serviços. Todos os navegadores modernos permitem alterar as suas definições de cookies para ter um controlo total.
+							sobre se os cookies podem ou não ser instalados. Para saber mais, visite a secção de ajuda do navegador que está a utilizar.
+
+							Se continuar a utilizar o nosso website, presumiremos que concorda com o uso de cookies, conforme descrito acima.
+						</p>
+						<p>
+
+							Chamamos ainda a sua atenção para o facto de que durante qualquer interação com o Site, o seu endereço IP poderá ser detetado pelo Organizador. Podemos utilizar o seu endereço IP para diagnosticar problemas com os nossos serviços ou para administrar o Site.
+
+							Caso tenha alguma dúvida sobre os termos da Política de Privacidade, por favor contacte-nos através do e-mail: *NOME DE DOMÍNIO*
+						</p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="footer">
+			<div class="footer__container">
+				<div class="footer__text">
+					Estamos dedicados a proporcionar uma experiência de jogo online segura,
+					honesta e divertida, em parceria com plataformas éticas e de confiança,
+					exigindo sempre a aceitação dos nossos <a href="terms.html">Termos de Uso</a> e da <a href="policy.html">Política de
+						Privacidade</a>. É proibida qualquer reprodução ou utilização não
+					autorizada do nosso conteúdo, e os nossos serviços são exclusivamente
+					para maiores de idade. Incentivamos o jogo responsável para prevenir
+					problemas de dependência, oferecendo apoio através de recursos como
+					<a href="www.gamcare.org.uk">www.gamcare.org.uk</a>,
+					<a href="www.gambleaware.org">www.gambleaware.org</a>.
+				</div>
+				<div class="footer__bottom">
+					<i>Casino 2025. Todos os direitos reservados.</i>
+					<div class="footer__actions">
+						<a href="terms.html" class="footer__action">Termos de Uso</a>
+						<a href="policy.html" class="footer__action">Política de Privacidade</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script>(()=>{"use strict";let t=!1;setTimeout((()=>{if(t){let t=new Event("windowScroll");window.addEventListener("scroll",(function(e){document.dispatchEvent(t)}))}}),0),window.FLS=!0,function(){const t=document.querySelectorAll("[data-rating]");function e(t){const e=t.target;if(e.closest(".rating__input")){const t=e.closest(".rating__input"),a=+t.value,i=t.closest(".rating");"set"===i.dataset.rating&&function(t,e){const a=e;n(t,a)}(i,a)}}function n(t,e){const n=t.querySelectorAll(".rating__item"),a=parseInt(e),i=e-a;t.hasAttribute("data-rating-title")&&(t.title=e),n.forEach(((t,e)=>{t.classList.remove("rating__item--active"),t.querySelector("span")&&n[e].querySelector("span").remove(),e<=a-1&&t.classList.add("rating__item--active"),e===a&&i&&t.insertAdjacentHTML("beforeend",`<span style="width:${100*i}%"></span>`)}))}t&&t.forEach((t=>{const a=+t.dataset.ratingValue;!function(t,e){let n="";for(let t=0;t<e;t++)0===t&&(n+='<div class="rating__items">'),n+=`\n\t\t\t\t<label class="rating__item">\n\t\t\t\t\t<input class="rating__input" type="radio" name="rating" value="${t+1}">\n\t\t\t\t</label>`,t===e&&(n+='</div">');t.insertAdjacentHTML("beforeend",n)}(t,+t.dataset.ratingSize?+t.dataset.ratingSize:5),a&&n(t,a),document.addEventListener("click",e)}))}()})();</script>
+</body>
+
+</html>
+
+</html>
